@@ -14,4 +14,4 @@ app.get('/', (req, res) => res.send('Hello World!'));
 require("./app/routes/client.routes.js")(app);
 // listen
 const port = config.app.PORT;
-app.listen(port, () => console.log(`Example app listening on http://localhost:${port}`))
+app.listen(port, () => console.log(`http://localhost:${port}`))
