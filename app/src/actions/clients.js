@@ -14,7 +14,7 @@ export const getClients = () => async (dispatch) => {
 
 export const getClient = (id) => async (dispatch) => {
     try {
-      const {data} = await api.getClient(id);
+      const {data} = await api.fetchClient(id);
   
       dispatch({ type: GET, payload: data });
     } catch (error) {

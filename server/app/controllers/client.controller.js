@@ -6,7 +6,7 @@ exports.create = (req, res) => {
          message: "Les champs ne peuvent être vides!"
      })
  }
- hash.make('password123')
+  hash.make(req.body.mot_de_passe)
   .then(hsh => {
     const client = new Client({
       email: req.body.email,
@@ -19,8 +19,8 @@ exports.create = (req, res) => {
       code_postal: req.body.code_postal,
       ville: req.body.ville,
       pays: req.body.pays,
-      inscrit: req.body.inscrit,
-      admin: req.body.admin 
+      inscrit: 0,
+      admin: 0
    })
    Client.create(client, (err, data) => {
       if (err)

@@ -1,4 +1,5 @@
 const db = require('./db');
+const hash = require('../config/hashing');
 
 const Client = function(client){
 this.email = client.email;
@@ -56,32 +57,35 @@ Client.getAll = result => {
             return;
         }
 
-        console.log("clients: ", res);
+        console.log("\x1b[32m", "Les clients ont bien été fetch");
         result(null, res);
     });
 };
 
 Client.updateById = (id, client, result) => {
-    db.query(
-        "UPDATE clients SET email = ?, mot_de_passe = ?, prenom = ?, nom = ?, date_naissance = ?, telephone = ?, adresse = ?, code_postal = ?, ville = ?, pays = ?, inscrit = false, admin = false WHERE id = ?",
-        [client.email, client.mot_de_passe, client.prenom, client.nom, client.date_naissance, client.telephone, client.adresse, client.code_postal, client.ville, client.pays, id],
-        (err, res) => {
-        if (err) {
-            console.log("error: ", err);
-            result(null, err);
-            return;
-        }
-
-        if (res.affectedRows == 0) {
-            // not found client with the id
-            result({ kind: "not_found" }, null);
-            return;
-        }
-
-        console.log("updated customer: ", { id: id, ...customer });
-        result(null, { id: id, ...customer });
-        }
-    );
+    hash.make(client.mot_de_passe)
+    .then(hsh=>{
+        db.query(
+            "UPDATE clients SET email = ?, mot_de_passe = ?, prenom = ?, nom = ?, date_naissance = ?, telephone = ?, adresse = ?, code_postal = ?, ville = ?, pays = ?, inscrit = ?, admin = ? WHERE id = ?",
+            [client.email, hsh, client.prenom, client.nom, client.date_naissance, client.telephone, client.adresse, client.code_postal, client.ville, client.pays, client.inscrit, client.admin, id],
+            (err, res) => {
+            if (err) {
+                console.log("error: ", err);
+                result(null, err);
+                return;
+            }
+    
+            if (res.affectedRows == 0) {
+                // not found client with the id
+                result({ kind: "not_found" }, null);
+                return;
+            }
+    
+            console.log("updated customer: ", { id: id, ...customer });
+            result(null, { id: id, ...customer });
+            }
+        );
+    })
 };
 
 Client.remove = (id, result) => {
