@@ -20,7 +20,7 @@ exports.create = (req, res) => {
       ville: req.body.ville,
       pays: req.body.pays,
       inscrit: 0,
-      admin: 0
+      admin: 1
    })
    Client.create(client, (err, data) => {
       if (err)
