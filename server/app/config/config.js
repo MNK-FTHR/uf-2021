@@ -1,15 +1,16 @@
+
 module.exports={
     app:{
-        PORT: "5000"
+        PORT: process.env.PORT || "5000"
     },
     db:{
-        HOST: "localhost",
-        USER: "root",
-        PASSWORD: "",
-        DB: "at_home"
+        HOST: process.env.HOST ||"localhost",
+        USER: process.env.USER ||"root",
+        PASSWORD: process.env.PASSWORD ||"",
+        DB: process.env.DB ||"at_home"
     },
     cors:{
-        AUTH: "http://localhost:3000",
+        AUTH: process.env.AUTH ||"http://localhost:3000",
         METHODS: ["GET", "POST", "PATCH", "DELETE"]
     }
 }

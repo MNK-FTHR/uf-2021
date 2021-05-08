@@ -74,11 +74,11 @@ exports.update = (req, res) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Aucuns client avec l'ID ${req.params.customerId}.`
+            message: `Aucuns client avec l'ID ${req.params.clientId}.`
           });
         } else {
           res.status(500).send({
-            message: "Erreur lors de la mise à jour du client de l'id " + req.params.customerId
+            message: "Erreur lors de la mise à jour du client de l'id " + req.params.clientId
           });
         }
       } else res.send(data);
@@ -90,7 +90,7 @@ exports.delete = (req, res) => {
         if (err) {
           if (err.kind === "not_found") {
             res.status(404).send({
-              message: `Aucuns client avec l'ID ${req.params.customerId}.`
+              message: `Aucuns client avec l'ID ${req.params.clientId}.`
             });
           } else {
             res.status(500).send({

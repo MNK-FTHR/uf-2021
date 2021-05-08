@@ -16,7 +16,7 @@ this.pays = client.pays;
 this.inscrit = client.inscrit;
 this.admin = client.admin;
 }
-
+// créer le client
 Client.create = (newClient, result) => {
     db.query("INSERT INTO clients SET ?", newClient, (err, res) => {
         if (err) {
@@ -81,8 +81,8 @@ Client.updateById = (id, client, result) => {
                 return;
             }
     
-            console.log("updated customer: ", { id: id, ...customer });
-            result(null, { id: id, ...customer });
+            console.log("updated client: ", { id: id, ...client });
+            result(null, { id: id, ...client });
             }
         );
     })
