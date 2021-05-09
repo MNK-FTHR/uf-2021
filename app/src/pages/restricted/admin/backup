@@ -1,0 +1,51 @@
+import React, { useState, useEffect } from 'react';
+import { DataGrid } from '@material-ui/data-grid';
+import { Link } from 'react-router-dom';
+import Axios from "axios";
+
+const columns = [
+  { field: 'id', headerName: 'ID', width: 70 },
+  { field: 'email', headerName: 'E-Mail', width: 200 },
+  { field: 'prenom', headerName: 'Prénom', width: 130 },
+  { field: 'nom', headerName: 'Nom', width: 130 },
+  { field: 'date_naissance', headerName: 'Date de naissance', type: 'date', width: 200 },
+  { field: 'telephone', headerName: 'Age', type: 'number', width: 130 },
+  { field: 'adresse', headerName: 'Adresse', width: 130 },
+  { field: 'code_postal', headerName: 'Code Postal', type: 'number', width: 130 },
+  { field: 'ville', headerName: 'Ville', width: 130 },
+  { field: 'pays', headerName: 'Pays', width: 130 },
+  { field: 'inscrit', headerName: 'Inscrit',  type: 'number', width: 130 },
+  { field: 'admin', headerName: 'Admin',  type: 'number', width: 130 },
+
+  /*{
+    field: 'email',
+    headerName: 'Full name',
+    description: 'This column has a value getter and is not sortable.',
+    sortable: false,
+    width: 160,
+    valueGetter: (params) =>
+      `${params.getValue('firstName') || ''} ${params.getValue('lastName') || ''}`,
+  }*/
+];
+const Dashboard = (props) => {
+  Axios.defaults.withCredentials = true;
+  const [clients, setClients] = useState({ client: [] });
+  useEffect(() => {
+    const fetchClients = async () =>{
+        const clientList = await Axios.get('http://localhost:5000/clients');
+        setClients(clientList.data);
+    }
+    fetchClients();
+},[]);
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <p><Link to='/'>back</Link></p>
+      <div style={{ height: 400, width: '100%' }}>
+        <DataGrid rows={clients} columns={columns} pageSize={5} checkboxSelection />
+      </div>
+    </div>
+  )
+};
+
+export default Dashboard;

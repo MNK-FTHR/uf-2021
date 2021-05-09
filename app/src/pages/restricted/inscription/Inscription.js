@@ -1,11 +1,11 @@
 import React from 'react'
 
-const NewsGestion = () => {
+function Inscription() {
     return (
         <div>
-            News Admin
+            INSCRIPTION
         </div>
     )
 }
 
-export default NewsGestion
+export default Inscription

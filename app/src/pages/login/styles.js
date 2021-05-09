@@ -5,16 +5,17 @@ export default makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-    },
-    avatar: {
+      },
+      avatar: {
         margin: theme.spacing(1),
         backgroundColor: theme.palette.secondary.main,
-    },
-    form: {
-        width: '100%',
+      },
+      form: {
+        width: '100%', // Fix IE 11 issue.
         marginTop: theme.spacing(1),
-    },
-    submit: {
+      },
+      submit: {
         margin: theme.spacing(3, 0, 2),
-    },
+      },
+
 }))
