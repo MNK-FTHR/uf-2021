@@ -3,6 +3,7 @@ import { DataGrid } from '@material-ui/data-grid';
 import { Link } from 'react-router-dom';
 import Axios from "axios";
 import UpdateForm from "./UpdateForm/UpdateForm";
+import Button from "@material-ui/core/Button";
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
   { field: 'email', headerName: 'E-Mail', width: 200 },
@@ -49,6 +50,7 @@ const Dashboard = (props) => {
         const result = await Axios(`${url}/${selectionModel}`);
         console.log(result);
         setClient(result.data);
+        console.log(client);
       } catch (error) {
         setIsError(true);
       }
@@ -89,7 +91,7 @@ const Dashboard = (props) => {
         }
         {
           client &&
-          <UpdateForm client={client}/>
+          <UpdateForm client={client} cancel={() => setClient(null)}/>
         }
         
     </div>

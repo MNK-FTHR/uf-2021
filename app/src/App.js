@@ -97,6 +97,15 @@ function App() {
     {id:14, content:"lorem ijzeghfiouazo"},
     {id:15, content:"lorem ijzeghfiouazo"},
   ]
+  const challenges = [
+    {id:1, content:"Description du Challenge 1", points: 5},
+    {id:2, content:"Description du Challenge 2", points: 10},
+    {id:3, content:"Description du Challenge 3", points: 10},
+  ]
+  const about = [
+    {id:1, content:"Description partie 1"},
+    {id:2, content:"Description partie 2"},
+  ]
   return (
     <div className="App">
       <Router>
@@ -105,10 +114,10 @@ function App() {
         </header>
         {/* Main routes */}
         <Route exact path='/' render={
-          props => <Home {...props} news={news} loginStatus={loginStatus.toString()}
+          props => <Home {...props} news={news} about={about} loginStatus={loginStatus.toString()}
             handleLogin={handleLogin} />} />
         <Route exact path='/about' handleLogin={handleLogin} render={
-          props => <About {...props} loginStatus={loginStatus.toString()}
+          props => <About {...props} about={about} loginStatus={loginStatus.toString()}
             handleLogin={handleLogin} />} />
         <Route exact path='/news' handleLogin={handleLogin} render={
           props => <News {...props} news={news} loginStatus={loginStatus.toString()}
@@ -140,7 +149,7 @@ function App() {
         <AdminRoute exact path='/dashboard' admin={adminStatus} component={Dashboard} />
         <ProtectedRoute exact path='/profile' loginStatus={loginStatus} client={client} component={Profile} />
         <ProtectedRoute exact path='/inscription' loginStatus={loginStatus} component={Inscription} />
-        <ProtectedRoute exact path='/jeux' loginStatus={loginStatus} component={Jeux} />
+        <ProtectedRoute exact path='/jeux' loginStatus={loginStatus} challenges={challenges} client={client} component={Jeux} />
         <Route exact path='/unauthorized' component={Unauthorized} />
       </Router>
     </div>

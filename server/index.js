@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 // LOGIN LOGIN LOGIN LOGIN
 //movable?
 const bcrypt = require("bcrypt");
-const db = require("./app/models/db")
+const db = require("./app/config/db")
 app.use(cookieParser());
 app.use(
   session({
@@ -114,6 +114,7 @@ app.post('/clients/login', (req, res)=>{
 app.get('/', (req, res) => res.send('Hello World!'));
 // routes
 require("./app/routes/client.routes.js")(app);
+require("./app/routes/new.routes.js")(app);
 // listen
 const port = config.app.PORT;
 app.listen(port, () => console.log(`http://localhost:${port}`))

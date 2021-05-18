@@ -1,4 +1,4 @@
-const db = require('./db');
+const db = require('../config/db');
 const hash = require('../config/hashing');
 
 const Client = function(client){
@@ -66,8 +66,8 @@ Client.updateById = (id, client, result) => {
     hash.make(client.mot_de_passe)
     .then(hsh=>{
         db.query(
-            "UPDATE clients SET email = ?, mot_de_passe = ?, prenom = ?, nom = ?, date_naissance = ?, telephone = ?, adresse = ?, code_postal = ?, ville = ?, pays = ?, inscrit = ?, admin = ? WHERE id = ?",
-            [client.email, hsh, client.prenom, client.nom, client.date_naissance, client.telephone, client.adresse, client.code_postal, client.ville, client.pays, client.inscrit, client.admin, id],
+            "UPDATE clients SET email = ?, mot_de_passe = ?, prenom = ?, nom = ?, date_naissance = ?, telephone = ?, adresse = ?, code_postal = ?, ville = ?, pays = ? WHERE id = ?",
+            [client.email, hsh, client.prenom, client.nom, client.date_naissance, client.telephone, client.adresse, client.code_postal, client.ville, client.pays, id],
             (err, res) => {
             if (err) {
                 console.log("error: ", err);
@@ -97,7 +97,7 @@ Client.remove = (id, result) => {
         }
 
         if (res.affectedRows == 0) {
-        // not found Customer with the id
+        // not found Client with the id
         result({ kind: "not_found" }, null);
         return;
         }

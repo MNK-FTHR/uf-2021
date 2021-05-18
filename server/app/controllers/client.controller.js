@@ -50,11 +50,11 @@ exports.findOne = (req, res) => {
         if (err) {
           if (err.kind === "not_found") {
             res.status(404).send({
-              message: `Aucuns client avec l'ID ${req.params.customerId} trouvé...`
+              message: `Aucuns client avec l'ID ${req.params.clientId} trouvé...`
             });
           } else {
             res.status(500).send({
-              message: "Erreur lors de la recherche du client de l'id " + req.params.customerId
+              message: "Erreur lors de la recherche du client de l'id " + req.params.clientId
             });
           }
         } else res.send(data);

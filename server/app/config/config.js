@@ -11,6 +11,6 @@ module.exports={
     },
     cors:{
         AUTH: process.env.AUTH ||"http://localhost:3000",
-        METHODS: ["GET", "POST", "PATCH", "DELETE"]
+        METHODS: ["GET", "POST", "PUT", "DELETE"]
     }
 }
