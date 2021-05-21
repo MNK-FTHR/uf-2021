@@ -7,9 +7,13 @@ function News(props) {
     return (
         <div>
             News
+            <hr/>
             <p><Link to='/'>back</Link></p>
             {props.news.map(({ id, content }) => (
-                <New key={id} id={id} content={content} />
+                <div>
+                    <New key={id} id={id} content={content} />
+                    <hr/>
+                </div>  
             ))}
         </div>
     )

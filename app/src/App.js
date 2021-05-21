@@ -81,21 +81,21 @@ function App() {
     });
   }
   const news = [
-    {id:1, content:"lorem ijzeghfiouazo"},
-    {id:2, content:"lorem ijzeghfiouazo"},
-    {id:3, content:"lorem ijzeghfiouazo"},
-    {id:4, content:"lorem ijzeghfiouazo"},
-    {id:5, content:"lorem ijzeghfiouazo"},
-    {id:6, content:"lorem ijzeghfiouazo"},
-    {id:7, content:"lorem ijzeghfiouazo"},
-    {id:8, content:"lorem ijzeghfiouazo"},
-    {id:9, content:"lorem ijzeghfiouazo"},
-    {id:10, content:"lorem ijzeghfiouazo"},
-    {id:11, content:"lorem ijzeghfiouazo"},
-    {id:12, content:"lorem ijzeghfiouazo"},
-    {id:13, content:"lorem ijzeghfiouazo"},
-    {id:14, content:"lorem ijzeghfiouazo"},
-    {id:15, content:"lorem ijzeghfiouazo"},
+    {id:1, content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut dolor a nulla facilisis accumsan. Proin tincidunt dolor vitae diam consectetur"},
+    {id:2, content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut dolor a nulla facilisis accumsan. Proin tincidunt dolor vitae diam consectetur"},
+    {id:3, content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut dolor a nulla facilisis accumsan. Proin tincidunt dolor vitae diam consectetur"},
+    {id:4, content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut dolor a nulla facilisis accumsan. Proin tincidunt dolor vitae diam consectetur"},
+    {id:5, content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut dolor a nulla facilisis accumsan. Proin tincidunt dolor vitae diam consectetur"},
+    {id:6, content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut dolor a nulla facilisis accumsan. Proin tincidunt dolor vitae diam consectetur"},
+    {id:7, content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut dolor a nulla facilisis accumsan. Proin tincidunt dolor vitae diam consectetur"},
+    {id:8, content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut dolor a nulla facilisis accumsan. Proin tincidunt dolor vitae diam consectetur"},
+    {id:9, content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut dolor a nulla facilisis accumsan. Proin tincidunt dolor vitae diam consectetur"},
+    {id:10, content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut dolor a nulla facilisis accumsan. Proin tincidunt dolor vitae diam consectetur"},
+    {id:11, content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut dolor a nulla facilisis accumsan. Proin tincidunt dolor vitae diam consectetur"},
+    {id:12, content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut dolor a nulla facilisis accumsan. Proin tincidunt dolor vitae diam consectetur"},
+    {id:13, content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut dolor a nulla facilisis accumsan. Proin tincidunt dolor vitae diam consectetur"},
+    {id:14, content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut dolor a nulla facilisis accumsan. Proin tincidunt dolor vitae diam consectetur"},
+    {id:15, content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut dolor a nulla facilisis accumsan. Proin tincidunt dolor vitae diam consectetur"},
   ]
   const challenges = [
     {id:1, content:"Description du Challenge 1", points: 5},
@@ -103,8 +103,8 @@ function App() {
     {id:3, content:"Description du Challenge 3", points: 10},
   ]
   const about = [
-    {id:1, content:"Description partie 1"},
-    {id:2, content:"Description partie 2"},
+    {id:1, content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut dolor a nulla facilisis accumsan. Proin tincidunt dolor vitae diam consectetur"},
+    {id:2, content:"ac suscipit tellus tincidunt. Nullam iaculis tincidunt leo. Nulla facilisi. Quisque hendrerit fringilla urna at sagittis. Aenean ullamcorper orci ac luctus consectetur"},
   ]
   return (
     <div className="App">
